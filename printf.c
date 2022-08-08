@@ -59,5 +59,5 @@ y++;
 va_end(ptr);
 
 _putchar('\n');
-return(y);
+return (y);
 }
