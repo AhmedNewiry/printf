@@ -31,3 +31,13 @@ va_list ptr;
 va_start(ptr, format);
 while (format[y] != '\0')
 {
+if (format[y] == '%')
+{
+
+switch (format[y + 1])
+{
+case 'c':
+	x = va_arg(ptr, int);
+	_putchar(x);
+	y++;
+	break;
