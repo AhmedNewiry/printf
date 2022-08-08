@@ -41,3 +41,10 @@ case 'c':
 	_putchar(x);
 	y++;
 	break;
+case 's':
+	str = va_arg(ptr, char*);
+	_puts(str);
+	y++;
+	break;
+}
+}
