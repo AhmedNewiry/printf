@@ -2,7 +2,7 @@
 /**
  * _putchar - prints a character
  * @c: is a parameter
- * Return: nothing
+	* Return: 1 if success -1 if not
  */
 int _putchar(char c)
 {
