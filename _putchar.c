@@ -2,7 +2,8 @@
 /**
  * _putchar - prints a character
  * @c: is a parameter
-	* Return: 1 if success -1 if not
+ * Return: 1 if success and -1 if not
+	
  */
 int _putchar(char c)
 {
