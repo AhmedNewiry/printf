@@ -15,3 +15,19 @@ _putchar(str[i]);
 i++;
 }
 }
+/**
+ * _printf- a function that produces output according to a format.
+ * @format: the last named param
+ * Return: int if sucess
+ */
+int _printf(const char *format, ...)
+{
+char *str;
+int x;
+int y = 0;
+
+va_list ptr;
+
+va_start(ptr, format);
+while (format[y] != '\0')
+{
