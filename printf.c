@@ -48,3 +48,16 @@ case 's':
 	break;
 }
 }
+else
+{
+
+_putchar(format[y]);
+
+}
+y++;
+}
+va_end(ptr);
+
+_putchar('\n');
+return(y);
+}
