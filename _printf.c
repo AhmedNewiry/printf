@@ -78,8 +78,9 @@ format_len += spec_len;
 else
 {
 _putchar(format[x]);
-}
 format_len++;
+}
+
 }
 va_end(ptr);
 return (format_len);
