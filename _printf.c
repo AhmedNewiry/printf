@@ -83,7 +83,7 @@ format_len++;
 }
 va_end(ptr);
 _putchar('\n');
-return (format_len);
+return (format_len - 1);
 }
 va_end(ptr);
 return (-1);
