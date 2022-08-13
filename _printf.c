@@ -61,3 +61,46 @@ va_end(ptr);
 _putchar('\n');
 return (y);
 }
+/**
+ * _printf- a function that produces output according to a format.
+ * @format: the last named param
+ * Return: int if sucess
+ */
+
+int _printf(const char *format, ...)
+{
+int x, spec_len, format_len = 0;
+va_list ptr;
+va_start(ptr, format);
+if (format != NULL)
+{
+if (_strlen(format) == 0)
+{
+va_end(ptr);
+return (0);
+}
+for (x = 0; format[x] != '\0'; x++)
+{
+if (format[x] == '%')
+{
+spec_len = spec_printer(format, ptr, &x);
+if (spec_len ==  -1)
+{
+va_end(ptr);
+return (-1);
+}
+format_len += spec_len;
+}
+else
+{
+_putchar(format[x]);
+}
+format_len++;
+}
+va_end(ptr);
+_putchar('\n');
+return (format_len);
+}
+va_end(ptr);
+return (-1);
+}
