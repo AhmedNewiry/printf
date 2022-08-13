@@ -82,7 +82,6 @@ _putchar(format[x]);
 format_len++;
 }
 va_end(ptr);
-_putchar('\n');
 return (format_len - 1);
 }
 va_end(ptr);
