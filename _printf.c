@@ -82,7 +82,7 @@ _putchar(format[x]);
 format_len++;
 }
 va_end(ptr);
-return (format_len - 1);
+return (format_len);
 }
 va_end(ptr);
 return (-1);
