@@ -1,46 +1,63 @@
 #include "main.h"
-#include <string.h>
+void _puts(char *str);
 int _printf(const char *format, ...);
-
 /**
- * spec_printer- hendles % printing
- * @format: pointer to the last named pramater
- * @ptr: pointer to first optional paramater
- * @x:pointer to the format lenght
- * Return: the lenght of the format specifier
+ * _puts-prints a string
+ * @str: pointer to the first char of the string
  */
+void _puts(char *str)
+{
+int i = 0;
 
-static int spec_printer(const char *format, va_list ptr, int *x)
+while (str[i])
 {
-int n;
-int spec_len;
-spec_controller controller[] = {
-{'s', print_str},
-{'c', print_c},
-{'i', print_int},
-{'d', print_int},
-{'b', print_binary}
-};
-*x = *x + 1;
-if (format[*x] == '%')
-{
-_putchar('%');
-return (1);
+_putchar(str[i]);
+i++;
 }
-if (format[*x] == '\0')
-{
-return (-1);
 }
-for (n = 0; n < 5 ; n++)
+/**
+ * _printf- a function that produces output according to a format.
+ * @format: the last named param
+ * Return: int if sucess
+ */
+int _printf(const char *format, ...)
 {
-if (format[*x] == controller[n].c)
+char *str;
+int x;
+int y = 0;
+
+va_list ptr;
+
+va_start(ptr, format);
+while (format[y] != '\0')
 {
-spec_len = controller[n].f_ptr(ptr);
-return (spec_len);
+if (format[y] == '%')
+{
+
+switch (format[y + 1])
+{
+case 'c':
+	x = va_arg(ptr, int);
+	_putchar(x);
+	y++;
+	break;
+case 's':
+	str = va_arg(ptr, char*);
+	_puts(str);
+	y++;
+	break;
 }
+}
+else
+{
+
+_putchar(format[y]);
 
 }
-_putchar('%');
-_putchar(format[*x]);
-return (2);
+y++;
+}
+va_end(ptr);
+
+_putchar('\n');
+return (y);
 }
