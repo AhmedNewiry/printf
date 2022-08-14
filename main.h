@@ -22,4 +22,9 @@ int print_int(va_list ptr);
 char *_itoa(long int num, int base);
 int print_binary(va_list ptr);
 int _strlen(const char *s);
+int print_hex(va_list ptr);
+int print_un(va_list ptr);
+int print_oct(va_list ptr);
+char *string_toupper(char *s);
+int print_hexU(va_list ptr);
 #endif

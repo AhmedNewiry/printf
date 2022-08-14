@@ -19,7 +19,11 @@ spec_controller controller[] = {
 {'c', print_c},
 {'i', print_int},
 {'d', print_int},
-{'b', print_binary}
+{'b', print_binary},
+{'x', print_hex},
+{'X', print_hexU},
+{'o', print_oct},
+{'u', print_un}
 };
 *x = *x + 1;
 if (format[*x] == '%')
@@ -31,7 +35,7 @@ if (format[*x] == '\0')
 {
 return (-1);
 }
-for (n = 0; n < 5 ; n++)
+for (n = 0; n < 9; n++)
 {
 if (format[*x] == controller[n].c)
 {
